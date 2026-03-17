@@ -24,19 +24,14 @@ The auditor identifies a wide spectrum of critical vulnerabilities:
 
 ---
 
-### Integration Instructions
+### How to Use
 
-#### Option 1: Claude Projects (Enterprise/Pro)
-1. Create a new **Project** in Claude.ai named "Security Auditor Core".
-2. Open `system_prompt.txt` from this repository and copy the full text.
-3. Paste into the **Custom Instructions** section of the Project.
-4. Save the project. Any code uploaded will be automatically analyzed according to the structured JSON format.
-
-#### Option 2: Pre-prompting in a Chat
-1. Open `system_prompt.txt` and copy the contents.
-2. Start a new chat session in Claude.
-3. Paste the prompt and replace `{code_snippet}` with the target code.
-4. The output is **strictly JSON**, making it ready for parsing by internal security dashboards or automated triaging scripts.
+1. **Download**: Download the ZIP file of this repository.
+2. **Go to Claude**: Visit the [Claude.ai](https://claude.ai) website.
+3. **Customize**: Open the sidebar and go to **Customize**.
+4. **Skills**: Navigate to the **Skills** section.
+5. **Upload**: Click the **plus (+)** icon to upload a skill, then drag and drop the ZIP file.
+6. **Enjoy**: Save it and start auditing! Enjoy!
 
 ---
 
