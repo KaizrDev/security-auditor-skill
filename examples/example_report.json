@@ -1,0 +1,43 @@
+{
+  "summary": {
+    "total_issues": 4,
+    "high_risk": 3,
+    "medium_risk": 1,
+    "low_risk": 0,
+    "overall_recommendation": "The code contains several critical vulnerabilities including SQL Injection, RCE, and XSS. Immediate remediation is required."
+  },
+  "issues": [
+    {
+      "line": 8,
+      "type": "Hardcoded Secret",
+      "risk": "medium",
+      "description": "Sensitive secret key is hardcoded in the source code.",
+      "fix": "Use environment variables or a secret management service to store sensitive keys.",
+      "example_fix": "SECRET_KEY = os.environ.get('SECRET_KEY')"
+    },
+    {
+      "line": 16,
+      "type": "SQL Injection",
+      "risk": "high",
+      "description": "User input is directly concatenated into a SQL query, allowing for arbitrary query execution.",
+      "fix": "Use parameterized queries or an ORM to handle database interactions safely.",
+      "example_fix": "cursor.execute(\"SELECT username FROM users WHERE id = ?\", (user_id,))"
+    },
+    {
+      "line": 21,
+      "type": "Cross-Site Scripting (XSS)",
+      "risk": "high",
+      "description": "User-controlled data is rendered directly into HTML without escaping.",
+      "fix": "Use a templating engine that performs automatic escaping or manually escape user input.",
+      "example_fix": "return render_template_string(\"<h1>Hello, {{ user }}</h1>\", user=user[0])"
+    },
+    {
+      "line": 28,
+      "type": "Remote Code Execution (RCE)",
+      "risk": "high",
+      "description": "User input is passed directly to os.system(), allowing for arbitrary command execution.",
+      "fix": "Avoid using os.system for user-controlled input. Use safer alternatives like the subprocess module with proper argument handling.",
+      "example_fix": "import subprocess\nsubprocess.run(['ls', '-l'], check=True)"
+    }
+  ]
+}

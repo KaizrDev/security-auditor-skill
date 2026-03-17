@@ -49,6 +49,28 @@ The tool returns a machine-readable JSON object containing:
 
 ---
 
+### Project Structure
+
+- `system_prompt.txt`: The core system prompt for Claude.
+- `examples/`: Directory containing test cases and sample reports.
+  - `vulnerable_example.py`: A sample Python file with intentional security flaws.
+  - `example_report.json`: An example of the JSON report Claude generates.
+- `LICENSE`: MIT License.
+- `CONTRIBUTING.md`: Guidelines for contributors.
+
+---
+
+### Examples
+
+To see the tool in action without pasting your own code, you can use the files in the `examples/` directory.
+
+1.  Copy the content of `system_prompt.txt`.
+2.  Start a new Claude chat.
+3.  Paste the prompt, replacing `{code_snippet}` with the content of `examples/vulnerable_example.py`.
+4.  Compare the output with `examples/example_report.json`.
+
+---
+
 ### License
 
-Distributed under the MIT License [cite: README.
+Distributed under the MIT License.
